@@ -84,15 +84,17 @@
                 class="dropdown-menu custom-dropdown-menu"
                 aria-labelledby="navbarDropdownMenuLink"
               >
-                <a class="dropdown-item" href="#"
+                <a class="dropdown-item" href="AdminMenu.html"
                   >Dashboard <i class="fas fa-user"></i
                 ></a>
-                <a class="dropdown-item" href="#">Record New Vaccine Batch</a>
+                <a class="dropdown-item" href="RecordNewVaccineBatch.html"
+                  >Record New Vaccine Batch</a
+                >
               </div>
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href=""
+            <a class="nav-link" href="index.html"
               >Log Out <i class="fas fa-sign-out-alt"></i
             ></a>
           </li>
@@ -123,7 +125,7 @@
             <td>10</td>
 
             <td>
-              <i class="fas fa-eye fa-2x"></i>
+              <i class="fas fa-eye fa-2x" onclick="openLoginForm()"></i>
             </td>
           </tr>
           <tr>
@@ -140,6 +142,91 @@
             <td>30</td>
             <td>
               <i class="fas fa-eye fa-2x"></i>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Pop-up window -->
+    <div class="popup-overlay"></div>
+    <div class="popup batch-info">
+      <div class="popup-close" onclick="closeLoginForm()">&times;</div>
+      <h3 class="header">Batch Info:</h3>
+      <div class="information">
+        <p>Batch No.:</p>
+        <p>Expiry date:</p>
+        <p>Quantity of available:</p>
+        <p>Quantity of pending:</p>
+        <p>Quantity of administered:</p>
+      </div>
+
+      <table class="table table-hover table-wrapper">
+        <thead>
+          <tr>
+            <th scope="col">Vaccination ID</th>
+            <th scope="col">Appointment date</th>
+            <th scope="col">Status</th>
+            <th scope="col">Remarks</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>VC110</td>
+            <td>13/05/2021</td>
+            <td>Administered</td>
+            <td>All good!</td>
+            <td>
+              <i class="fas fa-plus-square fa-2x" onclick="openLoginForm()"></i>
+            </td>
+          </tr>
+          <tr>
+            <td>VC132</td>
+            <td>22/10/2021</td>
+            <td>Pending</td>
+            <td>-</td>
+            <td>
+              <i class="fas fa-plus-square fa-2x"></i>
+            </td>
+          </tr>
+          <tr>
+            <td>VC097</td>
+            <td>17/04/2021</td>
+            <td>Administered</td>
+            <td>All good!</td>
+
+            <td>
+              <a href=""><i class="fas fa-plus-square fa-2x"></i></a>
+            </td>
+          </tr>
+          <tr>
+            <td>VC132</td>
+            <td>22/10/2021</td>
+            <td>Pending</td>
+            <td>-</td>
+            <td>
+              <i class="fas fa-plus-square fa-2x"></i>
+            </td>
+          </tr>
+          <tr>
+            <td>VC132</td>
+            <td>22/10/2021</td>
+            <td>Pending</td>
+            <td>-</td>
+
+            <td>
+              <i class="fas fa-plus-square fa-2x"></i>
+            </td>
+          </tr>
+          <tr>
+            <td>VC132</td>
+            <td>22/10/2021</td>
+            <td>Pending</td>
+            <td>-</td>
+
+            <td>
+              <i class="fas fa-plus-square fa-2x"></i>
             </td>
           </tr>
         </tbody>
