@@ -54,6 +54,21 @@ tr:first-child th {
   color: #152d35;
 }
 
+.profile-pic {
+  width: 240px;
+  height: 170px;
+  border-radius: 100%;
+}
+
+.function-button{
+
+  margin-top: 30px;
+  color: #112031;
+  background-color: #d4ecdd;
+  border: 6px solid #112031;
+  border-radius: 20px;
+}
+
 /* .container {
   width: 400px;
   max-width: 400px;
@@ -282,6 +297,19 @@ body.showPopUp .popup {
   color: #d4ecdd;
 }
 
+.popup.batch-info {
+  width: 750px;
+  height: 500px;
+}
+
+.popup table {
+  margin: auto;
+  max-height: 200px;
+  overflow: auto;
+  display: block;
+  width: 80%;
+}
+
 .login-form {
   display: inline-block;
   width: 40%;
@@ -291,4 +319,17 @@ body.showPopUp .popup {
   .login-form {
     width: 50%;
   }
+
+  .function-button{
+    margin: auto;
+    width: 60%;
+  }
 }
+
+@media (max-width: 600px) {
+  .function-button {
+    margin: auto;
+    width: 60%;
+  }
+}
+
