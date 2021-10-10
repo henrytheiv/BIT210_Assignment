@@ -1,4 +1,4 @@
-<!-- this is sign up page -->
+<!-- this is sign up administrator page-->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -80,36 +80,35 @@
     <!-- Sing Up form Administrator-->
     <div class="text-center">
       <form class="login-form">
-        <h1 class="mb-4 page-title">Sign Up</h1>
+        <h1 class="mb-4 page-title">Sign Up Administrator</h1>
 
         <!-- Radio btn for user type -->
         <!-- Radio btn for Patient -->
         <div class="form-check form-check-inline mt-2 mb-2">
-            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-            <label class="form-check-label" for="inlineRadio1">Patient</label>
-            <a href="SignUp_Patient.html"></a>
-          </div>
-          <!-- Radio btn for Administrator -->
-          <!-- set the rdo btn to default selected -->
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" checked="checked">
-            <label class="form-check-label" for="inlineRadio2">Administrator</label>
-          </div>
+          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+          <label class="form-check-label" for="inlineRadio1">Patient </label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" checked="checked">
+          <label class="form-check-label" for="inlineRadio2">Administrator </label>
+        </div>
 
         <!-- dropdown menu for healthcare centre -->   
-        <h5 class="mt-3 page-centreName">Select a centre:</h5>       
+        <h5 class="mt-3 instruction">Select a centre:</h5>       
         <div class="mb-2 dropdown">
-          <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Healthcare Centre 
+          <button class="btn btn-secondary btn-lg dropdown-toggle custom-dropdown-toggle-healthcare" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Healthcare Centre ↓
           </button>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="#">Clinic ABC</a>
-            <a class="dropdown-item" href="#">Clinic DEF</a>
-            <a class="dropdown-item" href="#">Clinic HIJ</a>
+          <div class="dropdown-menu custom-dropdown-menu-healthcare">
+            <a class="dropdown-item custom-dropdown-item-healthcare" href="#" onclick="openPopUp()">Donda Medical Centre > </a>
+            <a class="dropdown-item custom-dropdown-item-healthcare" href="#">APLJ Medical Centre > </a>
+            <a class="dropdown-item custom-dropdown-item-healthcare" href="#">MoonWay Medical Centre > </a>
           </div>
-        </div>
-        
+        </div> 
 
+        <!-- message below centre dropdown menu -->
+        <p class="mt-1" >Healthcare centre is not listed? <a href="#">Add Centre</a></p>
+        
         <!-- text box for username -->
         <div class="form-floating">
           <input
@@ -165,10 +164,6 @@
             <label for="floatingPassword">Staff ID</label>
           </div>
 
-        
-          
-
-
         <!-- Sign Up Button -->
         <button class="w-50 btn btn-lg btn-primary mt-4" type="submit">
           Sign Up
@@ -178,6 +173,29 @@
         <p class="mt-5 mb-3 text-muted">&copy; DahVax 2021</p>
       </form>
     </div>
+
+    <!-- Pop-up window showing centre details-->
+    <div class="popup-overlay"></div>
+    <div class="popup">
+      <div class="popup-close" onclick="closePopUp()">&times;</div>
+      <h3 class="header">Healthcare Centre Details</h3>
+    
+      <div class="element_1">
+        <label for="centreName">Centre name:</label>
+        <h4>Donda Healthcare Centre</h4>
+      </div>
+
+      <div class="element_1">
+        <label for="address">Address:</label>
+        <h4>69, Jalan Maju Selatan, Bandar Ye, 47500 Petaling Jaya, Selangor</h4>
+      </div>
+
+      <div class="element_1">
+        <button class="selectCentre">Select</button>
+      </div>
+      
+    </div>
+
 
     <script src="scripts.js"></script>
   </body>

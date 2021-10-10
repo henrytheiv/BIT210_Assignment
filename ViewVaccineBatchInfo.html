@@ -81,7 +81,7 @@
                 <i class="fas fa-bars"></i>
               </a>
               <div
-                class="dropdown-menu custom-dropdown-menu"
+                class="dropdown-menu custom-nav-dropdown-menu"
                 aria-labelledby="navbarDropdownMenuLink"
               >
                 <a class="dropdown-item" href="AdminMenu.html"
@@ -125,7 +125,7 @@
             <td>10</td>
 
             <td>
-              <i class="fas fa-eye fa-2x" onclick="openLoginForm()"></i>
+              <i class="fas fa-eye fa-2x" onclick="openPopUp()"></i>
             </td>
           </tr>
           <tr>
@@ -151,7 +151,7 @@
     <!-- Pop-up window -->
     <div class="popup-overlay"></div>
     <div class="popup batch-info">
-      <div class="popup-close" onclick="closeLoginForm()">&times;</div>
+      <div class="popup-close" onclick="closePopUp()">&times;</div>
       <h3 class="header">Batch Info:</h3>
       <div class="information">
         <p>Batch No.:</p>
@@ -178,7 +178,7 @@
             <td>Administered</td>
             <td>All good!</td>
             <td>
-              <i class="fas fa-plus-square fa-2x" onclick="openLoginForm()"></i>
+              <i class="fas fa-plus-square fa-2x" onclick="openManageVaccination()"></i>
             </td>
           </tr>
           <tr>
@@ -233,6 +233,33 @@
       </table>
     </div>
 
+    <!-- Pop-up window for manage vaccination -->
+    <div class="popup-overlay-manage-vaccination"></div>
+    <div class="popup-manage-vaccination batch-info">
+      <h3 class="header">Vaccination info:</h3>
+      <div class="information text-center">
+        <h3 class="header">Patient details:</h3>
+        <p>Full Name.:</p>
+        <p>IC/ Passport:</p>
+        <h3 class="header">Batch info:</h3>
+        <p>Batch No.:</p>
+        <p>Expiry date:</p>
+        <p>Vaccine name:</p>
+        <p>Manufacturer:</p>
+      </div>
+
+      <input class="form-control d-block" list="datalistOptions" id="exampleDataList" placeholder="Type to search...">
+      <datalist id="datalistOptions">
+        <option value="Confirmed">
+        <option value="Administered">
+      </datalist>
+      <button onclick="closeManageVaccination()">Back</button>
+
+      
+    </div>
+    <footer>
+      <p class="text-muted copyright">&copy; DahVax 2021</p>
+    </footer>
     <script src="scripts.js"></script>
   </body>
 </html>

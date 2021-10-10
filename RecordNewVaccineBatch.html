@@ -81,13 +81,13 @@
                 <i class="fas fa-bars"></i>
               </a>
               <div
-                class="dropdown-menu custom-dropdown-menu"
+                class="dropdown-menu custom-nav-dropdown-menu"
                 aria-labelledby="navbarDropdownMenuLink"
               >
                 <a class="dropdown-item" href="AdminMenu.html"
                   >Dashboard <i class="fas fa-user"></i
                 ></a>
-                <a class="dropdown-item" href="ViewVaccineBatchInfo.html">View Vaccine Batch Info</a>
+                <a class="dropdown-item" href="#">View Vaccine Batch Info</a>
               </div>
             </div>
           </li>
@@ -120,7 +120,7 @@
             <td>V110</td>
             <td>Pfizer</td>
             <td>
-              <i class="fas fa-plus-square fa-2x" onclick="openLoginForm()"></i>
+              <i class="fas fa-plus-square fa-2x" onclick="openPopUp()"></i>
             </td>
           </tr>
           <tr>
@@ -144,7 +144,7 @@
     <!-- Pop-up window -->
     <div class="popup-overlay"></div>
     <div class="popup">
-      <div class="popup-close" onclick="closeLoginForm()">&times;</div>
+      <div class="popup-close" onclick="closePopUp()">&times;</div>
       <h3 class="header">Record New Batch:</h3>
       <div class="information">
         <p>Vaccine Name</p>
@@ -168,7 +168,10 @@
         </div>
       </div>
     </div>
-
+    
+    <footer>
+      <p class="text-muted copyright">&copy; DahVax 2021</p>
+    </footer>
     <script src="scripts.js"></script>
   </body>
 </html>

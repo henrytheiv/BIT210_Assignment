@@ -19,7 +19,7 @@ body {
   text-align: center;
 }
 
-.page-centreName {
+.centreNamepage- {
   font-family: "Montserrat", sans-serif;
   font-size: 1rem;
   font-weight: 300;
@@ -27,11 +27,59 @@ body {
   text-align: center;
 }
 
-.dropdown-item {
+.sign-up-icon{
+
+  color: #112031;
+  cursor: pointer;
+  
+}
+
+.login-form {
+  display: inline-block;
+  width: 40%;
+}
+
+.sign-up-form{
+
+  margin: auto;
   display: block;
-  font-size: 14px;
-  color: #222;
-  margin-bottom: 5px
+  width:50%;
+}
+
+.sign-up-form button{
+
+  margin: auto;
+  display: block;
+
+}
+
+
+/* Drop dowm menu for centre in signUp page */
+
+.custom-dropdown-toggle-healthcare{
+  background-color: white;
+  color: #112031;
+  font-size: 1.1rem;
+  margin-top: 1px;
+}
+
+.custom-dropdown-menu-healthcare{
+  background-color: #dae1e7;
+  margin: auto;
+  padding: 10px;
+}
+
+.custom-dropdown-item-healthcare {
+  display: block;
+  font-size: 15px;
+  color:#112031;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+.custom-dropdown-menu-healthcare a:hover{
+  color: #000000;
+  font-weight: bold
 }
 
 .instruction {
@@ -69,77 +117,7 @@ tr:first-child th {
   border-radius: 20px;
 }
 
-/* .container {
-  width: 400px;
-  max-width: 400px;
-  margin: 18px;
-  padding: 32px;
-  background-color: white;
-}
 
-
-.container,
-.form_input,
-.form_button {
-  font: 500;
-  font-family: sans-serif;
-
-} */
-/* 
-.form >*:first-child{
-  margin-top: 0;
-}
-
-.form >*:last-child{
-  margin-bottom: 0;
-}
-
-.form_message {
-  text-align: center;
-  margin-bottom: 18px;
-}
-
-.form_message_error {
-  color: red;
-}
-
-.form_message_success {
-  color: green;
-}
-
-.form_title {
-  margin-bottom: 32px;
-  text-align: center;
-}
-
-.form_input-grp {
-  margin-bottom: 18px;
-}
-
-.form_input {
-  display: block;
-  width: 100%;
-  padding: 12px;
-  box-sizing: border-box;
-  border: #009579;
-  outline: none;
-  background-color: #eeeeee;
-  transition: background 0.2s, border-color 0.2s;
-}
-
-.form_input:focus {
-  border-color: #009579;
-  background: white;
-}
-
-.form_input-error {
-  color: red;
-  border-color: red;
-}
-
-.form_input-error-message {
-  margin-top: 9px;
-} */
 
 /* Navigation bar style elements */
 
@@ -175,11 +153,11 @@ nav {
   color: #19456b;
 }
 
-.custom-dropdown-menu {
+.custom-nav-dropdown-menu {
   background-color: #152d35;
 }
 
-.custom-dropdown-menu .dropdown-item:hover {
+.custom-nav-dropdown-menu .dropdown-item:hover {
   background-color: #345b63;
   color: #f8f1f1;
 }
@@ -188,12 +166,9 @@ nav {
   display: none !important;
 }
 
+
+
 /* Popup content */
-.center {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-}
 
 .popup-overlay {
   position: fixed;
@@ -205,6 +180,8 @@ nav {
   background: rgba(0, 0, 0, 0.5);
   display: none;
 }
+
+
 .popup {
   position: absolute;
   top: -150%;
@@ -227,6 +204,7 @@ body.showPopUp .popup {
   opacity: 1;
   transform: translate(-50%, -50%) scale(1);
 }
+
 .popup .popup-close {
   position: absolute;
   top: -10px;
@@ -243,7 +221,6 @@ body.showPopUp .popup {
 }
 
 .popup .header {
-
   font-family: "Montserrat", sans-serif;
   text-align: center;
   font-size: 20px;
@@ -252,15 +229,92 @@ body.showPopUp .popup {
   margin: 20px 0px;
 }
 
-.popup .information{
+.popup .information {
   display: block;
   text-align: center;
   font-size: 1rem;
   font-weight: 300;
   color: #222;
   padding: 0%;
-
 }
+
+.popup.batch-info {
+  width: 750px;
+  height: 500px;
+}
+
+.popup table {
+  margin: auto;
+  max-height: 200px;
+  overflow: auto;
+  display: block;
+  width: 80%;
+}
+
+/* Pop up for admin sign up form */
+
+body.showPopUp-admin-sign-up .popup-overlay-admin-sign-up {
+  display: block;
+}
+body.showPopUp-admin-sign-up .popup-admin-sign-up {
+  top: 60%;
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.popup-overlay-admin-sign-up {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100vh;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+}
+
+
+.popup-admin-sign-up {
+  position: absolute;
+  top: -150%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1.15);
+  width: 650px;
+  height: 650px;
+  background: #f5f5f5;
+  z-index: 2;
+  opacity: 0;
+  box-shadow: 10px 10px 5px #112031;
+  border-radius: 20px;
+  transition: transform 300ms ease-in-out, opacity 300ms ease-in-out;
+}
+
+.popup-admin-sign-up .popup-close {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 40px;
+  height: 40px;
+  background: #555;
+  color: #f5f5f5;
+  font-size: 25px;
+  font-weight: 600;
+  text-align: center;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.popup-admin-sign-up .header {
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 500;
+  color: #112031;
+  margin: 20px 0px;
+}
+
+
+/* Popup content for record vaccine batch */
 
 .popup .form .element {
   padding: 8px 20px;
@@ -280,7 +334,7 @@ body.showPopUp .popup {
   background: #eee;
   border-radius: 5px;
 }
-.popup .form .element button.record{
+.popup .form .element button.record {
   margin: auto;
   margin-top: 0px;
   display: block;
@@ -297,25 +351,126 @@ body.showPopUp .popup {
   color: #d4ecdd;
 }
 
-.popup.batch-info {
-  width: 750px;
-  height: 500px;
-}
+/* Popup content for show healthcare centre */
 
-.popup table {
-  margin: auto;
-  max-height: 200px;
-  overflow: auto;
+.popup .element_1 label {
   display: block;
-  width: 80%;
+  font-size: 20px;
+  color: #222;
+  margin-bottom: 5px;
+  text-align: center;
 }
 
-.login-form {
-  display: inline-block;
-  width: 40%;
+.popup .element_1 h4 {
+  display: block;
+  font-size: 30px;
+  color: #112031;
+  margin-bottom: 50px;
+  text-align: center;
+  font-weight: 300;
+  font-family: "Work Sans", sans-serif;
 }
 
-@media (max-width: 900px) {
+.popup .element_1 button.selectCentre{
+  margin: auto;
+  margin-top: 100px;
+  display: block;
+  width: 30%;
+  padding: 5px 0px;
+  text-transform: uppercase;
+  outline: none;
+  border: none;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 5px;
+  cursor: pointer;
+  background: #112031;
+  color: #d4ecdd;
+}
+
+/* Pop-up for manage vaccination */
+
+.popup-overlay-manage-vaccination {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100vh;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+}
+
+
+.popup-manage-vaccination {
+  position: absolute;
+  top: -150%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1.15);
+  width: 650px;
+  height: 450px;
+  background: #f5f5f5;
+  z-index: 2;
+  opacity: 0;
+  box-shadow: 10px 10px 5px #112031;
+  border-radius: 20px;
+  transition: transform 300ms ease-in-out, opacity 300ms ease-in-out;
+}
+body.showPopUp-manage-vaccination .popup-overlay-manage-vaccination {
+  display: block;
+}
+body.showPopUp-manage-vaccination .popup-manage-vaccination {
+  top: 50%;
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.popup-manage-vaccination .popup-close {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 40px;
+  height: 40px;
+  background: #555;
+  color: #f5f5f5;
+  font-size: 25px;
+  font-weight: 600;
+  text-align: center;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.popup-manage-vaccination button {
+  margin: auto;
+  margin-top: 0px;
+  display: block;
+  width: 30%;
+  padding: 5px 0px;
+  text-transform: uppercase;
+  outline: none;
+  border: none;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 5px;
+  cursor: pointer;
+  background: #112031;
+  color: #d4ecdd;
+}
+
+
+
+
+
+
+.copyright{
+
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@media (max-width: 1000px) {
   .login-form {
     width: 50%;
   }
@@ -333,3 +488,8 @@ body.showPopUp .popup {
   }
 }
 
+.Patient_profile-pic {
+  display: block;
+  width: 100%;
+  height: auto;
+}
