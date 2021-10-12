@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Request Vaccine Appointment</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Stylesheets -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- Bootstrap javascripts -->
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Font Awesome -->
+    <script
+      src="https://kit.fontawesome.com/2c48061f8d.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+
+
+
+  <body>
+    <!-- navigation bar with dahvax, logout and menu-->
+    <nav class="navbar navbar-expand-lg custom-navbar" id="navbarNav">
+      <!-- DahVax logo-->
+      <span class="navbar-brand mb-0 h1">DahVax</span>
+      <button
+        class="navbar-toggler custom-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarTogglerDemo01"
+        aria-controls="navbarTogglerDemo01"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- drop down menu in nav -->
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item dropdown">
+            <div id="my-custom-ddl">
+              <a
+                onclick="dropDownIconChange()"
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdownMenuLink"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+                >Menu
+                <i class="fas fa-bars"></i>
+              </a>
+
+              <!-- drop down list items in nav bar  -->
+              <div
+                class="dropdown-menu custom-nav-dropdown-menu"
+                aria-labelledby="navbarDropdownMenuLink"
+              >
+              <!-- icon back to patient menu -->
+                <a class="dropdown-item" href="PatientMenu.html"
+                  >Dashboard <i class="fas fa-user"></i></a>
+
+              <!-- icon go to View Appointment page -->
+                <a class="dropdown-item" href="#">View Appointment Status</a>
+              </div>
+            </div>
+          </li>
+
+          <!-- log out button in nav bar -->
+          <li class="nav-item">
+            <a class="nav-link" href="index.html"
+              >Log Out <i class="fas fa-sign-out-alt"></i
+            ></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- title for Request Vaccination Appointment page -->
+    <h2 class="page-title">Request Vaccination Appointment</h2>
+
+    <!-- Available Vaccine table -->
+    <div class="container mt-3">
+      <h3 class="instruction">1. Select a vaccine for vaccination appointment</h3>
+      <h3 class="page-description">Available vaccine:</h3>
+
+      <!-- it shows vaccine name and manufacturer in this table -->
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Vaccine Name</th>
+            <th scope="col">Manufacturer</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- first row -->
+          <tr>
+            <td>Pfizer</td>
+            <td>Pfizer Inc.</td>
+            <td>
+              <i class="fas fa-plus-square fa-2x" onclick="openPopUpRequestVaccine1()"></i>
+            </td>
+          </tr>
+          <!-- second row -->
+          <tr>
+            <td>Sinovac</td>
+            <td>Sinovac Biotech Ltd.</td>
+            <td>
+              <i class="fas fa-plus-square fa-2x"></i>
+            </td>
+          </tr>
+          <!-- third row -->
+          <tr>
+            <td>Astrazeneca</td>
+            <td>The AstraZeneca Corporate HQ</td>
+            <td>
+              <i class="fas fa-plus-square fa-2x"></i>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+
+    <footer>
+      <p class="text-muted copyright">&copy; DahVax 2021</p>
+    </footer>  
+
+
+    
+
+
+    <!-- Pop-up window to view the list of healthcare centres name and address -->
+    <div class="popup-overlay-requestvaccine-centre"></div>
+    <div class="popup-requestvaccine-centre">
+      <div class="popup-close" onclick="closePopUpRequestVaccine1()">&times;</div>
+      <!-- Title -->
+      <h3 class="header">Available Healthcare Centre</h3>
+      <!-- description -->
+      <div class="information">
+        <p class="instruction">2. Select a preferred healthcare centre</p>
+      </div>
+
+      <!-- table for the list of healthcare centres name and address -->
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col"> Centre Name</th>
+            <th scope="col">Address</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- first row -->
+          <tr>
+            <td>MoonWay Medical Centre</td>
+            <td>5, Jalan Ria, 47500 Petaling Jaya, Selangor</td>
+            <td>
+              <i class="fas fa-plus-square fa-2x" onclick="showBatchTable()"></i>
+            </td>
+          </tr>
+          <!-- second row -->
+          <tr>
+            <td>Gleneagle Hospital</td>
+            <td>69, Bandar Maju, 53000 Bangsar, Kuala Lumpur</td>
+            <td>
+              <i class="fas fa-plus-square fa-2x"></i>
+            </td>
+          </tr>
+          <!-- third row -->
+          <tr>
+            <td>Donda Medical Centre</td>
+            <td>8, Jalan Bukit Ye, 59100 Kuala Lumpur</td>
+            <td>
+              <i class="fas fa-plus-square fa-2x"></i>
+            </td>
+          </tr>
+          <!-- forth row -->
+          <tr>
+            <td>Pandai Medical Centre</td>
+            <td>88, Bandar Suria, 47100 Puchong</td>
+            <td>
+              <i class="fas fa-plus-square fa-2x"></i>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <!-- text below the pop up table-->
+      <p class="mt-1 des-RequestVaccine1">*These are the healthcare centre that offering the vaccine</p>
+      
+
+      <!-- after user choose a healthcare centre then come to here -->
+      <!-- this table was initailly hidden -->
+      <!-- it will shows under Pop-up window of the list of centre names and addresses -->
+      <div id="BatchNo-table" class="hidden">
+      <hr class="horizontal-line">
+      <!-- Title -->
+      <h3 class="header">Available Vaccine Batch</h3>
+      <!-- description -->
+      <p class="instruction">3. Select a preferred vaccine batch</p>
+     
+        <table class="table-batchNo">
+          <thead>
+            <tr>
+              <th scope="col">Batch No.</th>
+              <th scope="col">Expiry Date</th>
+              <th scope="col">Quantity Available</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- first row -->
+            <tr>
+              <td>Pfz-001</td>
+              <td>31/9/2022</td>
+              <td>999</td>
+              <td>
+                <i class="fas fa-plus-square fa-2x" onclick="showCalender()"></i>
+              </td>
+            </tr>
+            <!-- second row -->
+            <tr>
+              <td>Pfz-069</td>
+              <td>29/12/2022</td>
+              <td>678</td>
+              <td>
+                <i class="fas fa-plus-square fa-2x"></i>
+              </td>
+            </tr>
+            <!-- third row -->
+            <tr>
+              <td>Pfz-456</td>
+              <td>22/1/2023</td>
+              <td>857</td>
+              <td>
+                <i class="fas fa-plus-square fa-2x"></i>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+      <!-- after user choose a batch no then come to here -->
+      <!-- this table was initailly hidden -->
+      <!-- it will shows under batch no table -->
+      <div id="AppointmentDate" class="hidden">
+        <hr class="horizontal-line">
+        <!-- Title -->
+        <h3 class="header">Appointment Date</h3>
+        <!-- description -->
+        <p class="instruction">4. Select an upcoming date to request an appointment</p>
+        <div class="appointment-form">
+          <div class="element">
+            <label for="AppointmentDate">Appointment Date:</label>
+            <input type="date" id="AppointmentDate" />
+          </div>
+        </div>
+        <div class="element">
+          <button class="confirmDate">Confirm</button>
+        </div>
+      </div>
+      
+    </div>
+
+    <script src="scripts.js"></script>
+    
+    
+  </body>
+</html>
